@@ -41,4 +41,7 @@ def create_app():
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
+    from .menu import menu as menu_blueprint
+    app.register_blueprint(menu_blueprint)
+
     return app
