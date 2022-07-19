@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    Narva Haigla Buffee
+</h1>
+{% for message in get_flashed_messages() %}
+<div class="flash">
+    <div class="alert alert-danger" role="alert">
+        {{message}}
+    </div>
+</div>
+{% endfor %}
+<form method="post" action="/registration">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Новый логин</label>
+        <input class="form-control" id="exampleInputEmail1" type="text" name="name"
+               aria-label="пример ввода по умолчанию">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Пароль</label>
+        <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Admin pass</label>
+        <input type="password" class="form-control" name="admin_pass" id="admin_pass">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Регистрация</button>
+</form>
+{% endblock %}
